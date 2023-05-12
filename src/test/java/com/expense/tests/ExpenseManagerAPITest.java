@@ -9,9 +9,9 @@ import io.restassured.response.Response;
 
 public class ExpenseManagerAPITest {
 
-	public RestAssured.port = 8089;
 	@Test
 	public void test1() {
+		RestAssured.port = 8089;
 		Response res = RestAssured.get("http://localhost:8089/ExpenseApp-1/login.jsp");
 		int code = res.getStatusCode();
 		assertEquals(code, 200);
@@ -20,8 +20,9 @@ public class ExpenseManagerAPITest {
 	
 	@Test
 	public void Test2(){
+		RestAssured.port = 8089;
 		Response res = RestAssured.get("http://localhost:8089/ExpenseApp-1/login.jsp");
-		int time = res.getTime();
+		int time = (int) res.getTime();
 		assertEquals(time, 5);
 		System.out.println(time);
 	}
