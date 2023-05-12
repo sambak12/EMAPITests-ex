@@ -23,7 +23,7 @@ public class ExpenseManagerAPITest {
 		RestAssured.port = 8089;
 		Response res = RestAssured.get("http://localhost:8089/ExpenseApp-1/login.jsp");
 		int time = (int) res.getTime();
-		assertEquals(time, 10000);
+		assertEquals(time, 5000);
 		System.out.println(time);
 	}
 		
